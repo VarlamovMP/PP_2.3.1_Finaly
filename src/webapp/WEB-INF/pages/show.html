@@ -6,13 +6,16 @@
   <title>User</title>
 </head>
 <body>
-<p th:text="${user}">VALUE</p>
+<p th:text="${user.getId()}">VALUE</p>
+<p th:text="${user.getName()}">VALUE</p>
+<p th:text="${user.getEmail()}">VALUE</p>
+<hr>
 <br>
-<a th:href="@{/users/new}">Create new user</a>
+<a th:href="@{/users/new}">CREATE NEW USERS</a>
 <br>
-<a th:href="@{/users/{id}/edit(id=${user.getId()})}">Update user</a>
+<a th:href="@{/users/{id}/edit(id=${user.getId()})}">UPDATE</a>
 <br>
-<a th:href="@{/users}">Get all users</a>
+<a th:href="@{/users}">GET ALL USERS</a>
 <form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
   <input type="submit" value="Delete user">
 </form>

@@ -2,7 +2,7 @@ package web.service;
 
 import org.springframework.stereotype.Service;
 import web.dao.UserDao;
-import web.models.User;
+import web.model.User;
 
 import java.util.List;
 
@@ -26,18 +26,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUserById(int id) {
+    public void deleteUserById(Long id) {
         userDao.deleteUserById(id);
     }
 
     @Override
-    public void updateUser(int id, User user) {
+    public void updateUser(Long id, User user) {
         user.setId(id);
         userDao.updateUser(user);
     }
 
     @Override
-    public User getById(int id) {
+    public User getById(Long id) {
         return userDao.getById(id);
     }
 }
